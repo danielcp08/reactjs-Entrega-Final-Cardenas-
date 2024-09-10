@@ -1,22 +1,20 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <a className="navbar-brand" href="#">bordamita</a>
-        <div className="collapse navbar-collapse">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link" href="#">Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Products</a>
-            </li>
-          </ul>
-          <CartWidget />
+        <Link className="navbar-brand" to="/">Bordamita</Link>
+        <div className="navbar-nav">
+          <Link className="nav-item nav-link" to="/category/camisetas">Camisetas</Link>
+          <Link className="nav-item nav-link" to="/category/gorras">Gorras</Link>
+          <Link className="nav-item nav-link" to="/category/accesorios">Accesorios</Link>
+        </div>
+        <div className="ml-auto">
+          <Link to="/cart" className="btn btn-outline-primary">
+            Carrito <span className="badge bg-secondary">0</span>
+          </Link>
         </div>
       </div>
     </nav>
